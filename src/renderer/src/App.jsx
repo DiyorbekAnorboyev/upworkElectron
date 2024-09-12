@@ -6,7 +6,7 @@ function App() {
 
   useEffect(async () => {
     try {
-      const response = await fetch('http://localhost:8000/users');
+      const response = await fetch('https://upworknew.onrender.com/users');
       const result = await response.json();
       setData(result);
     } catch (error) {
@@ -23,7 +23,7 @@ function App() {
 
   const handleClick = async (e) => {
     e.preventDefault()
-    fetch('http://localhost:8000/users/', {
+    fetch('https://upworknew.onrender.com/users/', {
       method: 'POST',
       headers: {
         "Content-type": "application/json; charset=UTF-8"
