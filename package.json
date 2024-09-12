@@ -1,0 +1,67 @@
+{
+  "name": "arshad",
+  "version": "1.0.0",
+  "description": "An Electron application with React",
+  "main": "./out/main/index.js",
+  "author": "example.com",
+  "homepage": "https://electron-vite.org",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "start": "electron-vite preview",
+    "dev": "npm cache clean --force && electron-vite dev",
+    "dev1": "nodemon index.js",
+    "build": "electron-vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "build:unpack": " electron-builder --dir",
+    "build:win": "npm cache clean --force && npm run build && electron-builder --win",
+    "package-windows": "npm run build && electron-builder -w -c.extraMetadata.main=build/electron.js",
+    "build:mac": "npm run build && electron-builder --mac",
+    "build:linux": "npm run build && electron-builder --linux"
+  },
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/utils": "^3.0.0",
+    "cors": "^2.8.5",
+    "electron-updater": "^6.1.7",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0",
+    "net": "^1.0.2",
+    "ps-list": "^8.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@electron-toolkit/eslint-config": "^1.0.2",
+    "@electron-toolkit/eslint-config-prettier": "^2.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.3",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.2",
+    "vite": "^5.3.1"
+  },
+ "build": {
+  "npmRebuild": false,
+  "asar": false,
+  "fileAssociations": [],
+  "win": {
+    "target": [
+      "nsis"
+    ],
+    "icon": "path/to/icon.ico", 
+    "forceCodeSigning": false
+  },
+  "directories": {
+    "output": "dist"
+  }
+}
+
+}
