@@ -8,7 +8,7 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
-    "start": "electron-vite preview",
+    "start": "node ./out/server/app.js",
     "dev": "npm cache clean --force && electron-vite dev",
     "dev1": "nodemon index.js",
     "build": "electron-vite build",
