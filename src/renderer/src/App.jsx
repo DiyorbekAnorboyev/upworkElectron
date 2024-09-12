@@ -4,25 +4,7 @@ function App() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
-  useEffect(async () => {
-    try {
-      const response = await fetch('https://upworknew.onrender.com/users');
-      const result = await response.json();
-      setData(result);
-    } catch (error) {
-      console.error('Error fetching data on button click:', error);
-    }
-
-
-
-  }, []);
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
   const handleClick = async (e) => {
-    e.preventDefault()
     fetch('https://upworknew.onrender.com/users/', {
       method: 'POST',
       headers: {
@@ -34,6 +16,21 @@ function App() {
       .catch(err => {
         console.log(err)
       })
+  };
+
+  useEffect(async () => {
+    try {
+      const response = await fetch('https://upworknew.onrender.com/users');
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      console.error('Error fetching data on button click:', error);
+    }
+
+  }, []);
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   };
 
   return (
